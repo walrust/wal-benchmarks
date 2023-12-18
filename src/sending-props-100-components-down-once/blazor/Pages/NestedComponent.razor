@@ -1,0 +1,13 @@
+@if (Counter != 0)
+{
+    <NestedComponent Counter="@(Counter - 1)" Value="@Value" />
+}
+else
+{
+    @Value
+}
+
+@code {
+    [Parameter] public int Counter { get; set; }
+    [Parameter] public int Value { get; set; }
+}

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CA3714AE-2EF9-4DD1-81B3-95B01B0DA9AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sending-props-100-components-down-once", "sending-props-100-components-down-once", "{838DC4AE-3F3D-4750-A8AA-A67CDD3A02FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor", "src\sending-props-100-components-down-once\blazor\blazor.csproj", "{B6220332-BFCF-450A-AD85-B9EA3236217C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6220332-BFCF-450A-AD85-B9EA3236217C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6220332-BFCF-450A-AD85-B9EA3236217C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6220332-BFCF-450A-AD85-B9EA3236217C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6220332-BFCF-450A-AD85-B9EA3236217C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{838DC4AE-3F3D-4750-A8AA-A67CDD3A02FA} = {CA3714AE-2EF9-4DD1-81B3-95B01B0DA9AB}
+		{B6220332-BFCF-450A-AD85-B9EA3236217C} = {838DC4AE-3F3D-4750-A8AA-A67CDD3A02FA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CB88BE9-7529-477B-8039-E4BEA6650EB1}
+	EndGlobalSection
+EndGlobal

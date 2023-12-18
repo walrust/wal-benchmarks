@@ -1,0 +1,4 @@
+<div *ngIf="counter !== 0; else showValue">
+  <app-nested-component [counter]="counter - 1" [value]="value"></app-nested-component>
+</div>
+<ng-template #showValue>{{ value }}</ng-template>

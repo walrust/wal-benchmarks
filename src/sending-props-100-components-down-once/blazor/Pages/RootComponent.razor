@@ -1,0 +1,13 @@
+<div>
+    <button id="button" @onclick="OnClick">Click me</button>
+    <NestedComponent Counter="100" Value="@value" />
+</div>
+
+@code {
+    private int value = 0;
+
+    private void OnClick()
+    {
+        value++;
+    }
+}

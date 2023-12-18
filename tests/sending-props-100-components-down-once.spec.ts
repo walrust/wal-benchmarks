@@ -3,8 +3,20 @@ import { getExecutionTimeInMicroSecondsNClicks } from './extract-from-trace';
 import { promises as fsPromises } from 'fs';
 
 test.describe('Sending props 100 components down once', () => {
+  test(`angular`, async ({ page, browser }) => {
+    await testLogic(page, browser, 'angular', 'http://localhost:4200');
+  });
+
+  test(`blazor`, async ({ page, browser }) => {
+    await testLogic(page, browser, 'blazor', 'http://localhost:5206');
+  });
+
   test(`react`, async ({ page, browser }) => {
     await testLogic(page, browser, 'react', 'http://192.168.56.1:3000');
+  });
+
+  test(`vue`, async ({ page, browser }) => {
+    await testLogic(page, browser, 'vue', 'http://192.168.56.1:3000');
   });
 
   test(`wal`, async ({ page, browser }) => {
