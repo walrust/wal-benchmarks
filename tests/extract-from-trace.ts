@@ -5,9 +5,6 @@ export async function getExecutionTimeInMicroSecondsNClicks(tracePath: string, t
     let json = JSON.parse(content);
     let entries = json["traceEvents"];
     let [clickEntry, commitEntry] = getClickAndCommitEntriesFor100Clicks(entries, totalClickCount);
-
-    console.log(tracePath);
-
     return commitEntry.ts - clickEntry.ts + commitEntry.dur;
 }
 

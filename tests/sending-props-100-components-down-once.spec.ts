@@ -21,7 +21,7 @@ test.describe('Sending props 100 components down once', () => {
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];
 
-    while (results.length != 100) {
+    while (results.length != 1000) {
       await page.goto(url);
 
       await browser.startTracing(page, { path: tracePath });
