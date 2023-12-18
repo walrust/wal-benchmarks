@@ -35,7 +35,7 @@ impl Component for RootComponent {
     }
 
     fn update(&mut self, _message: Self::Message) -> bool {
-        self.value = 1;
+        self.value += 1;
         true
     }
 }

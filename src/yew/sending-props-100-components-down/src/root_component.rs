@@ -8,7 +8,7 @@ pub(crate) fn RootComponent() -> Html {
 
     let on_click = {
         let state = state.clone();
-        Callback::from(move |_| state.set(1))
+        Callback::from(move |_| state.set(*state + 1))
     };
 
     html! {

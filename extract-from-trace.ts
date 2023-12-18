@@ -1,48 +1,51 @@
 import { readFile, readdir } from "node:fs/promises";
 
-async function extractFromTrace(tracePath: string) {
+async function getExecutionTimeInMicroSecondsNClicks(tracePath: string, totalClickCount: number) {
     let content = await readFile(tracePath, { encoding: "utf8" });
     let json = JSON.parse(content);
     let entries = json["traceEvents"];
-    let [clickEntry, commitEntry] = extractRelevantEntries(entries);
+    let [clickEntry, commitEntry] = getClickAndCommitEntriesFor100Clicks(entries, totalClickCount);
 
     console.log(tracePath);
 
     return commitEntry.ts - clickEntry.ts + commitEntry.dur;
 }
 
-function extractRelevantEntries(entries: any[]): [any, any] {
+function getClickAndCommitEntriesFor100Clicks(entries: any[], totalClickCount: number): [any, any] {
     let clickEntry: any;
-    let commitEntry: any;
+    let currentClickCount = 0;
 
-    entries.forEach((x) => {
-        if (x.name === "EventDispatch" && x.args.data.type === "click") {
-            clickEntry = x;
-        } else if (x.name === "Commit" && x.ph === "X" && clickEntry) {
-            commitEntry = x;
+    for (const entry of entries) {
+        if (entry.name === "EventDispatch" && entry.args.data.type === "click") {
+            if (currentClickCount === 0) {
+                clickEntry = entry;
+            }
+            currentClickCount++;
+        } else if (entry.name === "Commit" && entry.ph === "X" && currentClickCount === totalClickCount) {
+            return [clickEntry, entry];
         }
-    });
-    return [clickEntry, commitEntry];
+    }
+
+    throw "Error processing traces";
 }
 
-async function processAllTraces(directoryPath: string) {
+async function processAllTracesForNClicks(directoryPath: string, totalClickCount: number) {
     var filesCount = 0;
     var totalDuration = 0;
 
     try {
         const files = await readdir(directoryPath);
         for (const file of files) {
-            totalDuration += await extractFromTrace(`${directoryPath}/${file}`);
+            console.log(file);
+            totalDuration += await getExecutionTimeInMicroSecondsNClicks(`${directoryPath}/${file}`, totalClickCount);
             filesCount++;
         }
     } catch (error) {
         console.error("Error processing traces:", error);
     }
 
-    console.log(`${directoryPath} Total duration: ${totalDuration} mikroseconds`);
-    console.log(`${directoryPath} Average duration: ${totalDuration / filesCount} mikroseconds`);
+    console.log(`${directoryPath} Total duration: ${totalDuration} microseconds`);
+    console.log(`${directoryPath} Average duration: ${totalDuration / filesCount} microseconds`);
 }
 
-processAllTraces("./results/wal/sending-props-100-components-down");
-processAllTraces("./results/react/sending-props-100-components-down");
-processAllTraces("./results/yew/sending-props-100-components-down");
+processAllTracesForNClicks("./results/yew/sending-props-100-times-100-components-down", 100);

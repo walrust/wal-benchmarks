@@ -5,7 +5,7 @@ export default function RootComponent() {
     const [value, setValue] = useState(0);
 
     const on_click = () => {
-        setValue(1);
+        setValue(value + 1);
     };
 
     return (
