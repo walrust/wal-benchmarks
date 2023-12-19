@@ -1,0 +1,16 @@
+@page "/"
+
+<button id="button" @onclick="OnClick">Click me</button>
+@for (int i = 0; i < value; i++)
+{
+    <div>@i</div>
+}
+
+@code {
+    private int value = 0;
+
+    private void OnClick()
+    {
+        value++;
+    }
+}
