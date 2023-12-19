@@ -6,5 +6,5 @@
     [Parameter]
     public int Value { get; set; }
 
-    private string DivStyle => $Value % 2 == 0 ? "color: red" : "color: blue";
+    private string DivStyle => Value % 2 == 0 ? "color: red" : "color: blue";
 }

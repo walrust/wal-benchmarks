@@ -1,0 +1,9 @@
+<div *ngIf="depth !== 0; else other">
+  <app-nested-component
+    [depth]="depth - 1"
+    (buttonClicked)="buttonClicked.emit()"
+  ></app-nested-component>
+</div>
+<ng-template #other>
+  <button *ngIf="depth === 1" (click)="onButtonClick()">Click me!</button>
+</ng-template>

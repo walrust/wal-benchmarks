@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div>
-      <p>{{ value }}</p>
-    </div>
-    <button id="button" @click="onClick">Click me</button>
-    <ChildComponent
-      v-for="index in 100"
-      :key="index"
-      :value=0
-    ></ChildComponent>
+    <p>{{ value }}</p>
   </div>
+  <button id="button" @click="onClick">Click me</button>
+  <ChildComponent
+    v-for="index in 100"
+    :key="index"
+    :value=0
+  ></ChildComponent>
 </template>
 
 <script>

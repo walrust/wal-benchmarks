@@ -1,0 +1,13 @@
+<div>
+    <NestedComponent Depth="100" OnButtonClick="HandleButtonClick" />
+    <p>@count</p>
+</div>
+
+@code {
+    private int count = 0;
+
+    private void HandleButtonClick()
+    {
+        count++;
+    }
+}

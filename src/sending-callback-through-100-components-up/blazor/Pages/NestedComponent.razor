@@ -1,0 +1,18 @@
+@if (Depth != 0)
+{
+    <NestedComponent Depth="Depth-1" OnButtonClick="HandleButtonClick" />
+}
+else
+{
+    <button @onclick="HandleButtonClick">Click me!</button>
+}
+
+@code {
+    [Parameter] public int Depth { get; set; }
+    [Parameter] public EventCallback OnButtonClick { get; set; }
+
+    private Task HandleButtonClick()
+    {
+        return OnButtonClick.InvokeAsync();
+    }
+}
