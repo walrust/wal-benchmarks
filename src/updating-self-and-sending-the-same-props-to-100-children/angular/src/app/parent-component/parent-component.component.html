@@ -1,0 +1,8 @@
+<div>
+  <p>{{ value }}</p>
+</div>
+<button id="button" (click)="onClick()">Click me</button>
+<app-child-component
+  *ngFor="let _ of dummyArray"
+  [value]="0"
+></app-child-component>

@@ -1,0 +1,19 @@
+@page "/"
+
+<div>
+    <p>@value</p>
+</div>
+<button @onclick="OnClick">Click me</button>
+@for (int i = 0; i < 100; i++)
+{
+    <ChildComponent Value="0" />
+}
+
+@code {
+    private int value = 0;
+
+    private void OnClick()
+    {
+        value++;
+    }
+}
