@@ -1,0 +1,10 @@
+<div>
+  <button id="button" (click)="onClick()">Click me</button>
+  <app-nested-component1
+    *ngIf="value % 2 === 0; else other"
+    [counter]="100"
+  ></app-nested-component1>
+  <ng-template #other>
+    <app-nested-component2 [counter]="100"></app-nested-component2>
+  </ng-template>
+</div>

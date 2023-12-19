@@ -1,0 +1,23 @@
+@page "/"
+
+<div>
+    <button id="button" @onclick="OnClick">Click me</button>
+    @if (value % 2 == 0)
+    {
+        <NestedComponent1 Counter="100" />
+    }
+    @else
+    {
+    <NestedComponent2 Counter="100" />
+    }
+
+</div>
+
+@code {
+    private int value = 0;
+
+    private void OnClick()
+    {
+        value++;
+    }
+}

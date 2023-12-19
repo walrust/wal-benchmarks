@@ -1,0 +1,11 @@
+First version of nested component
+@if (Counter != 0)
+{
+    <div>
+        <NestedComponent1 Counter="@(Counter - 1)" />
+    </div>
+}
+
+@code {
+    [Parameter] public int Counter { get; set; }
+}
