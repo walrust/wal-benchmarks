@@ -1,0 +1,10 @@
+<div style="@DivStyle">
+    <p> Const text </p>
+</div>
+
+@code {
+    [Parameter]
+    public int Value { get; set; }
+
+    private string DivStyle => $Value % 2 == 0 ? "color: red" : "color: blue";
+}
