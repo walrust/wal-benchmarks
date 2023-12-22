@@ -16,7 +16,7 @@ test.describe('Sending callback through 100 components up', () => {
   });
 
   test(`vue`, async ({ page, browser }) => {
-    await testLogic(page, browser, 'vue', 'http://192.168.56.1:3000');
+    await testLogic(page, browser, 'vue', 'http://localhost:3000');
   });
 
   test(`wal`, async ({ page, browser }) => {
