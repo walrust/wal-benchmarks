@@ -28,7 +28,6 @@ test.describe('Sending callback through 100 components up', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    console.log(browser.browserType().name(), browser.version());
     const basePath = `./results/sending-callback-through-100-components-up/${tool}-${browser.browserType().name()}-${browser.version()}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
