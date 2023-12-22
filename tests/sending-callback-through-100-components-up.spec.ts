@@ -4,7 +4,7 @@ import { promises as fsPromises } from 'fs';
 
 test.describe('Sending callback through 100 components up', () => {
   test(`angular`, async ({ page, browser }) => {
-    await testLogic(page, browser, 'angular', 'http://localhost:4200');
+    await testLogic(page, browser, 'angular', 'http://localhost:3000');
   });
 
   test(`blazor`, async ({ page, browser }) => {
