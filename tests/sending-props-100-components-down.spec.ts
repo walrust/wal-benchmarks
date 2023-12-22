@@ -12,7 +12,7 @@ test.describe('Sending props 100 components down', () => {
   });
 
   test(`react`, async ({ page, browser }) => {
-    await testLogic(page, browser, 'react', 'http://192.168.56.1:3000');
+    await testLogic(page, browser, 'react', 'http://localhost:3000');
   });
 
   test(`vue`, async ({ page, browser }) => {
