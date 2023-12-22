@@ -2,7 +2,7 @@ import { Browser, Page, test } from '@playwright/test';
 import { getExecutionTimeInMicroSecondsNClicks } from './extract-from-trace';
 import { promises as fsPromises } from 'fs';
 
-test.describe('Sending props 100 components down once', () => {
+test.describe('Replacing whole 100 components deep subtree', () => {
   test(`angular`, async ({ page, browser }) => {
     await testLogic(page, browser, 'angular', 'http://localhost:4200');
   });
@@ -28,7 +28,8 @@ test.describe('Sending props 100 components down once', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/sending-props-100-components-down-once/${tool}`;
+    console.log(browser.browserType().name(), browser.version());
+    const basePath = `./results/replacing-whole-100-components-deep-subtree/${tool}-${browser.browserType().name()}-${browser.version()}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

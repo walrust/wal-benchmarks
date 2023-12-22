@@ -2,7 +2,7 @@ import { Browser, Page, test } from '@playwright/test';
 import { getExecutionTimeInMicroSecondsNClicks } from './extract-from-trace';
 import { promises as fsPromises } from 'fs';
 
-test.describe('Updating self and sending the same props to 100 children', () => {
+test.describe('Sending props 100 components down', () => {
   test(`angular`, async ({ page, browser }) => {
     await testLogic(page, browser, 'angular', 'http://localhost:4200');
   });
@@ -28,7 +28,8 @@ test.describe('Updating self and sending the same props to 100 children', () => 
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/updating-self-and-sending-the-same-props-to-100-children/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    console.log(browser.browserType().name(), browser.version());
+    const basePath = `./results/sending-props-100-components-down/${tool}-${browser.browserType().name()}-${browser.version()}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];
@@ -53,3 +54,19 @@ test.describe('Updating self and sending the same props to 100 children', () => 
     await fsPromises.writeFile(resultPath, results.join('\n'));
   }
 });
+
+// test.describe('Sending props 100 times 100 components down', () => {
+//   for (let i = 0; i < 100; i++) {
+//     test(`Sending props 100 times 100 components down #${i}`, async ({ page, browser }) => {
+//       const tracePath = `./results/react/sending-props-100-times-100-components-down/trace-${i}.json`;
+//       await browser.startTracing(page, { path: tracePath });
+//       await page.goto('http://192.168.56.1:3000/');
+
+//       for (let j = 0; j < 100; j++) {
+//         await page.locator('button#button').click();
+//       }
+
+//       await browser.stopTracing();
+//     });
+//   }
+// });

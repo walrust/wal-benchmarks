@@ -2,7 +2,7 @@ import { Browser, Page, test } from '@playwright/test';
 import { getExecutionTimeInMicroSecondsNClicks } from './extract-from-trace';
 import { promises as fsPromises } from 'fs';
 
-test.describe('Updating self and sending the same props to 100 children', () => {
+test.describe('Updating attributes of 100 children', () => {
   test(`angular`, async ({ page, browser }) => {
     await testLogic(page, browser, 'angular', 'http://localhost:4200');
   });
@@ -28,7 +28,7 @@ test.describe('Updating self and sending the same props to 100 children', () => 
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/updating-self-and-sending-the-same-props-to-100-children/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/updating-attributes-of-100-children/${tool}-${browser.browserType().name()}-${browser.version()}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

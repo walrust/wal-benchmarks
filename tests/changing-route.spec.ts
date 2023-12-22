@@ -2,7 +2,7 @@ import { Browser, Page, test } from '@playwright/test';
 import { getExecutionTimeInMicroSecondsNClicks } from './extract-from-trace';
 import { promises as fsPromises } from 'fs';
 
-test.describe('Sending props 100 components down once', () => {
+test.describe('Changing route', () => {
   test(`angular`, async ({ page, browser }) => {
     await testLogic(page, browser, 'angular', 'http://localhost:4200');
   });
@@ -28,7 +28,7 @@ test.describe('Sending props 100 components down once', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/sending-props-100-components-down-once/${tool}`;
+    const basePath = `./results/changing-route/${tool}-${browser.browserType().name()}-${browser.version()}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];
@@ -53,19 +53,3 @@ test.describe('Sending props 100 components down once', () => {
     await fsPromises.writeFile(resultPath, results.join('\n'));
   }
 });
-
-// test.describe('Sending props 100 times 100 components down', () => {
-//   for (let i = 0; i < 100; i++) {
-//     test(`Sending props 100 times 100 components down #${i}`, async ({ page, browser }) => {
-//       const tracePath = `./results/react/sending-props-100-times-100-components-down/trace-${i}.json`;
-//       await browser.startTracing(page, { path: tracePath });
-//       await page.goto('http://192.168.56.1:3000/');
-
-//       for (let j = 0; j < 100; j++) {
-//         await page.locator('button#button').click();
-//       }
-
-//       await browser.stopTracing();
-//     });
-//   }
-// });
