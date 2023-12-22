@@ -38,7 +38,7 @@ test.describe('Changing route', () => {
 
       await browser.startTracing(page, { path: tracePath });
 
-      await page.locator('button#button').click();
+      await page.locator('a#button').click();
 
       await browser.stopTracing();
 
