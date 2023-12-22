@@ -28,7 +28,7 @@ test.describe('Replacing whole 100 components deep subtree', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/replacing-whole-100-components-deep-subtree/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/replacing-whole-100-components-deep-subtree/${tool}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

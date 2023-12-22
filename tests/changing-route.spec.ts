@@ -28,7 +28,7 @@ test.describe('Changing route', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/changing-route/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/changing-route/${tool}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

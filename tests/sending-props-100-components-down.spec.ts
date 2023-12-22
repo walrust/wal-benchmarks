@@ -28,7 +28,7 @@ test.describe('Sending props 100 components down', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/sending-props-100-components-down/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/sending-props-100-components-down/${tool}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

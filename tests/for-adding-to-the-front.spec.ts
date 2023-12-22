@@ -28,7 +28,7 @@ test.describe('For adding to the front', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/for-adding-to-the-front/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/for-adding-to-the-front/${tool}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];

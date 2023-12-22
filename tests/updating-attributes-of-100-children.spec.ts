@@ -28,7 +28,7 @@ test.describe('Updating attributes of 100 children', () => {
   });
 
   async function testLogic(page: Page, browser: Browser, tool: string, url: string) {
-    const basePath = `./results/updating-attributes-of-100-children/${tool}-${browser.browserType().name()}-${browser.version()}`;
+    const basePath = `./results/updating-attributes-of-100-children/${tool}`;
     const tracePath = `${basePath}.json`;
     const resultPath = `${basePath}.txt`;
     let results: number[] = [];
