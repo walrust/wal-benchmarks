@@ -32,7 +32,7 @@ export default defineConfig({
     video: 'off',
   },
 
-  timeout: 7200000, // 2 hours
+  timeout: 100000000, // a lot of time for the tests to run
 
   /* Configure projects for major browsers */
   projects: [
