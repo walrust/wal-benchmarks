@@ -36,7 +36,7 @@ test.describe('For adding to the front', () => {
     while (results.length != 1000) {
       await page.goto(url);
 
-      for (let i = 0; i < 100; i++) {
+      for (let i = 1; i < 100; i++) {
         await page.locator('button#button').click();
       }
 
