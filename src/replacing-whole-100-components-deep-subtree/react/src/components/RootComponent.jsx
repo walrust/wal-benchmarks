@@ -12,11 +12,11 @@ export default function RootComponent() {
     return (
         <div>
             <button id="button" onClick={on_click}>Click me</button>
-            if (value % 2 === 0) {
+            { value % 2 === 0 ? (
                 <NestedComponent1 counter={100} />
-            } else {
+            ) : (
                 <NestedComponent2 counter={100} />
-            }
+            )}
         </div>
     );
 }

@@ -7,11 +7,13 @@
 </template>
   
   <script>
-  import NestedComponent from './NestedComponent.vue';
+  import NestedComponent1 from './NestedComponent1.vue';
+  import NestedComponent2 from './NestedComponent2.vue';
   
   export default {
     components: {
-      NestedComponent
+      NestedComponent1,
+      NestedComponent2
     },
     data() {
       return {
