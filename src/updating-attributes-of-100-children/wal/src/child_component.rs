@@ -18,7 +18,7 @@ impl Component for ChildComponent {
     }
 
     fn view(&self, _behavior: &mut impl Behavior<Self>) -> VNode {
-        let style = if props.value % 2 == 0 {
+        let style = if self.value % 2 == 0 {
             "color: red"
         } else {
             "color: blue"

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <button id="button" @click="onClick">Click me</button>
-    <ChildComponent
-      v-for="index in 100"
-      :key="index"
-      :value="value"
-    ></ChildComponent>
-  </div>
+  <button id="button" @click="onClick">Click me</button>
+  <ChildComponent
+    v-for="index in 100"
+    :key="index"
+    :value="value"
+  ></ChildComponent>
 </template>
 
 <script>
