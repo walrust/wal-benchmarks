@@ -10,8 +10,8 @@ const RootComponent = () => {
 
   return (
     <div>
-      <NestedComponent depth={100} onButtonClick={handleButtonClick} />
       <p>{count}</p>
+      <NestedComponent depth={100} onButtonClick={handleButtonClick} />
     </div>
   );
 };

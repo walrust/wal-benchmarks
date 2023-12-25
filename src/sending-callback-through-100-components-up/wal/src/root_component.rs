@@ -23,11 +23,11 @@ impl Component for RootComponent {
     ) -> wal_core::virtual_dom::VNode {
         rsx! {
             <div>
+                <p>{self.value}</p>
                 <NestedComponent props = NestedComponentProperties {
                     counter: 100,
                     callback: behavior.create_callback(|_| ())
                 } />
-                <p>{self.value}</p>
             </div>
         }
     }

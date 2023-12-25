@@ -3,7 +3,7 @@
     <div
       v-for="index in value"
       :key="index"
-    > index </div>
+    > {{ index }} </div>
 </template>
 
 <script>

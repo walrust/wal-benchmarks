@@ -1,12 +1,8 @@
 <template>
-  <div>
     <div v-if="depth != 0">
       <NestedComponent :depth="depth - 1" @button-clicked="handleButtonClick" />
     </div>
-    <div v-else>
-      <button @click="handleButtonClick">Click me</button>
-    </div>
-  </div>
+    <button v-else id="button" @click="handleButtonClick">Click me</button>
 </template>
 
 <script>

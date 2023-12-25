@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NestedComponent :depth="100" @button-clicked="handleButtonClick" />
     <p>{{ count }}</p>
+    <NestedComponent :depth="100" @button-clicked="handleButtonClick" />
   </div>
 </template>
 

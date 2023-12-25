@@ -8,8 +8,8 @@ pub(crate) fn RootComponent() -> Html {
 
     html! {
         <div>
-            <NestedComponent counter={100} callback={Callback::from(move |_| state.set(*state + 1))} />
             <p>{*state}</p>
+            <NestedComponent counter={100} callback={Callback::from(move |_| state.set(*state + 1))} />
         </div>
     }
 }

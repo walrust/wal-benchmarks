@@ -12,6 +12,6 @@ export default function NestedComponent({ depth, onButtonClick }) {
       </div>
     );
   } else {
-    return <button onClick={handleClick}>Click me</button>;
+    return <button id="button" onClick={handleClick}>Click me</button>;
   }
 };
