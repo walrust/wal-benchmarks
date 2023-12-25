@@ -1,10 +1,12 @@
 @if (Depth != 0)
 {
-    <NestedComponent Depth="Depth-1" OnButtonClick="HandleButtonClick" />
+    <div>
+        <NestedComponent Depth="Depth-1" OnButtonClick="HandleButtonClick" />
+    </div>
 }
 else
 {
-    <button @onclick="HandleButtonClick">Click me!</button>
+    <button id="button" @onclick="HandleButtonClick">Click me!</button>
 }
 
 @code {
