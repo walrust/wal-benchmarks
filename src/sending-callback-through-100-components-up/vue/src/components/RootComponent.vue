@@ -11,7 +11,7 @@ import NestedComponent from './NestedComponent.vue';
 export default {
   name: 'RootComponent',
   components: {
-    ChildComponent,
+    NestedComponent,
   },
   data() {
     return {
