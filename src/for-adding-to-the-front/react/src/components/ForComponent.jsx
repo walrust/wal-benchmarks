@@ -12,7 +12,7 @@ export default function ForComponent() {
             <button id="button" onClick={on_click}>Click me</button>
             {Array.from({ length: value }).map((_, index) => (
                 <div>
-                    {value - index + 1}
+                    {value - index - 1}
                 </div>
             ))}
         </>
