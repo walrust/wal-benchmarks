@@ -1,0 +1,5 @@
+Average: 10148.966
+Median: 10173.5
+Standard Deviation: 1135.9141247664809
+Minimum: 4818.0
+Maximum: 15825.0
