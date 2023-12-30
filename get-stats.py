@@ -18,7 +18,7 @@ def process_file(file_path):
     
     if numbers:
         avg, median, std_dev, min_num, max_num = calculate_statistics(numbers)
-        summary_file = file_path.replace('.txt', '-summary.txt')
+        summary_file = file_path.replace('.txt', '-summary.txt').replace('results', 'summary')
         
         with open(summary_file, 'w') as summary:
             summary.write(f"Average: {avg}\n")
