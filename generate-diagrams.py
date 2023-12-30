@@ -43,11 +43,12 @@ def generate_diagrams(directory):
 
         if tools and averages:
             plt.figure(figsize=(10, 5))
-            plt.bar(tools, averages, color='blue')
+            bars = plt.bar(tools, averages, color='blue')
             plt.xlabel('Narzędzie')
             plt.ylabel('Średni czas wykonania w mikrosekundach')
             plt.title(diagram_title(root))
             plt.xticks(rotation=45)
+            plt.bar_label(bars, labels=[f'{round(val)}' for val in averages])
             plt.tight_layout()
             diagram_file_name = os.path.basename(root).replace('txt', 'png')
             diagram_file_path = './diagrams'
