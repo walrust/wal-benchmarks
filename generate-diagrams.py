@@ -50,9 +50,9 @@ def generate_diagrams(directory):
             plt.xticks(rotation=45)
             plt.bar_label(bars, labels=[f'{round(val)}' for val in averages])
             plt.tight_layout()
-            diagram_file_name = os.path.basename(root).replace('txt', 'png')
+            diagram_file_name = os.path.basename(root) + '.svg'
             diagram_file_path = './diagrams'
-            plt.savefig(os.path.join(diagram_file_path, diagram_file_name))
+            plt.savefig(os.path.join(diagram_file_path, diagram_file_name), format='svg')
             plt.close()
 
 generate_diagrams('./results')
