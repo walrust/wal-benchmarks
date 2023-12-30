@@ -27,15 +27,15 @@ def generate_diagrams(directory):
                 except Exception as e:
                     print(e)
 
-    if file_names and averages:
-        plt.figure(figsize=(10, 5))
-        plt.bar(file_names, averages, color='blue')
-        plt.xlabel('Files')
-        plt.ylabel('Average Value')
-        plt.title('Bar Chart for Directory: ' + os.path.basename(root))
-        plt.xticks(rotation=45)
-        plt.tight_layout()
-        plt.savefig(os.path.join(root, os.path.basename(root) + '_diagram.png'))
-        plt.close()
+        if file_names and averages:
+            plt.figure(figsize=(10, 5))
+            plt.bar(file_names, averages, color='blue')
+            plt.xlabel('Files')
+            plt.ylabel('Average Value')
+            plt.title('Bar Chart for Directory: ' + os.path.basename(root))
+            plt.xticks(rotation=45)
+            plt.tight_layout()
+            plt.savefig(os.path.join(root, os.path.basename(root) + '_diagram.png'))
+            plt.close()
 
 generate_diagrams('./results')
